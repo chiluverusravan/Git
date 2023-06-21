@@ -1,2 +1,16 @@
-Hello World
-Super process
+// Octokit.js
+// https://github.com/octokit/core.js#readme
+const octokit = new Octokit({
+  auth: 'YOUR-TOKEN'
+})
+
+await octokit.request('POST /repos/{owner}/{repo}/forks', {
+  owner: 'OWNER',
+  repo: 'REPO',
+  organization: 'octocat',
+  name: 'Hello-World',
+  default_branch_only: true,
+  headers: {
+    'X-GitHub-Api-Version': '2022-11-28'
+  }
+})
